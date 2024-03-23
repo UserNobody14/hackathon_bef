@@ -1,0 +1,7 @@
+<form>
+<input name="b" />
+</form>
+---
+My b is q
+---
+{"b": "q"}
