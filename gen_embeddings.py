@@ -8,7 +8,8 @@ from langchain.output_parsers.json import SimpleJsonOutputParser
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.schema import Document
 from langchain_core.runnables import RunnablePassthrough
-
+from llmconn import llm
+from genbed import retriever
 # from dotenv import load_dotenv
 # from langchain.chains import LLMChain
 # from langchain.prompts import PromptTemplate
@@ -23,26 +24,26 @@ from langchain_core.runnables import RunnablePassthrough
 # )
 # embeddings = OctoAIEmbeddings(endpoint_url="https://text.octoai.run/v1/embeddings")
 
-llm = OctoAIEndpoint(
-    endpoint_url="https://text.octoai.run/v1/chat/completions",
-    octoai_api_token="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjNkMjMzOTQ5In0.eyJzdWIiOiJiMjA2Zjk4OS01N2JjLTQ2ZGItYmVkYi05MTNiMGIxODMzYzgiLCJ0eXBlIjoidXNlckFjY2Vzc1Rva2VuIiwidGVuYW50SWQiOiI4ZjM3NzEwMi03ZDM0LTQ5MTktOTQ2Ni04OTYxMTM5MzFkOWEiLCJ1c2VySWQiOiJiYjBmZGU0My1hY2NkLTQ5ZjMtYmM0YS0yYTBiNzNlM2M5ZTAiLCJyb2xlcyI6WyJGRVRDSC1ST0xFUy1CWS1BUEkiXSwicGVybWlzc2lvbnMiOlsiRkVUQ0gtUEVSTUlTU0lPTlMtQlktQVBJIl0sImF1ZCI6IjNkMjMzOTQ5LWEyZmItNGFiMC1iN2VjLTQ2ZjYyNTVjNTEwZSIsImlzcyI6Imh0dHBzOi8vaWRlbnRpdHkub2N0b21sLmFpIiwiaWF0IjoxNzExMjExODAxfQ.GaaXvPGgp40CT5r-PTzaOoIHm28VTkx49utRAar6xIbu2vaduQya3IoodjxuwkWpLmwRDZzxO6yzmkD69KvN9_R0PcIwPSmg01DARubTmvbzPFMPzynbvdJrN27sNrjaxdJBYahL9vkI4Jr7lbuihy79-TpOHtQVwta0HfsNcHZPHD-P6pm4gPjN6U_9TpbaPJFDBeOFHzCXsX8-yhihT6apfo8PKZMZiNi257WrC8TTBqYA6yLeRP8hmtEv1GVHTT9tVtmqMYT5f2JiRlWYPawc2ehDZS3BMDNoFr3pKpLcN5h6OScf-NZI7oTRgWUu968RqpZKsILyPcu9BCCq1A",
-    model_kwargs={
-        "model": "mixtral-8x7b-instruct-fp16",
-        "max_tokens": 128,
-        "presence_penalty": 0,
-        "temperature": 0.01,
-        "top_p": 0.9,
-        "messages": [
-            {
-                "role": "system",
-                "content": """
-Reply with a PURE JSON response. Do not include any other text in your response. Include only correct JSON.
-The keys to your response should be the names of the <input> and <textarea> elements in the form. The values should be the user's input for each element, given their prompt.
-""",
-            },
-        ],
-    },
-)
+# llm = OctoAIEndpoint(
+#     endpoint_url="https://text.octoai.run/v1/chat/completions",
+#     octoai_api_token="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjNkMjMzOTQ5In0.eyJzdWIiOiJiMjA2Zjk4OS01N2JjLTQ2ZGItYmVkYi05MTNiMGIxODMzYzgiLCJ0eXBlIjoidXNlckFjY2Vzc1Rva2VuIiwidGVuYW50SWQiOiI4ZjM3NzEwMi03ZDM0LTQ5MTktOTQ2Ni04OTYxMTM5MzFkOWEiLCJ1c2VySWQiOiJiYjBmZGU0My1hY2NkLTQ5ZjMtYmM0YS0yYTBiNzNlM2M5ZTAiLCJyb2xlcyI6WyJGRVRDSC1ST0xFUy1CWS1BUEkiXSwicGVybWlzc2lvbnMiOlsiRkVUQ0gtUEVSTUlTU0lPTlMtQlktQVBJIl0sImF1ZCI6IjNkMjMzOTQ5LWEyZmItNGFiMC1iN2VjLTQ2ZjYyNTVjNTEwZSIsImlzcyI6Imh0dHBzOi8vaWRlbnRpdHkub2N0b21sLmFpIiwiaWF0IjoxNzExMjExODAxfQ.GaaXvPGgp40CT5r-PTzaOoIHm28VTkx49utRAar6xIbu2vaduQya3IoodjxuwkWpLmwRDZzxO6yzmkD69KvN9_R0PcIwPSmg01DARubTmvbzPFMPzynbvdJrN27sNrjaxdJBYahL9vkI4Jr7lbuihy79-TpOHtQVwta0HfsNcHZPHD-P6pm4gPjN6U_9TpbaPJFDBeOFHzCXsX8-yhihT6apfo8PKZMZiNi257WrC8TTBqYA6yLeRP8hmtEv1GVHTT9tVtmqMYT5f2JiRlWYPawc2ehDZS3BMDNoFr3pKpLcN5h6OScf-NZI7oTRgWUu968RqpZKsILyPcu9BCCq1A",
+#     model_kwargs={
+#         "model": "mixtral-8x7b-instruct-fp16",
+#         "max_tokens": 128,
+#         "presence_penalty": 0,
+#         "temperature": 0.01,
+#         "top_p": 0.9,
+#         "messages": [
+#             {
+#                 "role": "system",
+#                 "content": """
+# Reply with a PURE JSON response. Do not include any other text in your response. Include only correct JSON.
+# The keys to your response should be the names of the <input> and <textarea> elements in the form. The values should be the user's input for each element, given their prompt.
+# """,
+#             },
+#         ],
+#     },
+# )
 
 # files = os.listdir("./data")
 # file_texts = []
@@ -78,10 +79,12 @@ The keys to your response should be the names of the <input> and <textarea> elem
 
 # Question: {question}
 # """
-template = """
 
-Question: {question}
-"""
+# Reply with a PURE JSON response. Do not include any other text in your response. Include only correct JSON.
+# The keys to your response should be the names of the <input> and <textarea> elements in the form. The values should be the user's input for each element, given their prompt.
+#
+# Prompt:
+template = """{question}"""
 prompt = PromptTemplate.from_template(template)
 
 chain = {"question": RunnablePassthrough()} | prompt | llm | SimpleJsonOutputParser()

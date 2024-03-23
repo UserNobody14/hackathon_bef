@@ -1,0 +1,1282 @@
+
+    <form action="/submit-your-data" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="password"><br><br>
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"><br><br>
+
+        <label for="cars">Choose a car:</label><br>
+        <select id="cars" name="car">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form> 
+--- What the user wants ---
+    My name is John Doe, my password is password 123, my gender is male, I have a bike, My car is a volvo.
+---
+{
+
+
+    "name": "John Doe",
+    "password": "password123",
+    "gender": "male",
+    "vehicle1": "Bike",
+    "car": "volvo"
+}
+|---
+<form id="s3_upload_for_resume" data-key-template="stash/applications/resumes/{timestamp}-{unique_id}-6f380ac0ba06aca2a16589d55c08db13" enctype="multipart/form-data" action="https://grnhse-prod-jben-us-west-2.s3.us-west-2.amazonaws.com" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="x-amz-server-side-encryption" value="AES256"><input type="hidden" name="success_action_status" value="201"><input type="hidden" name="policy" value="eyJleHBpcmF0aW9uIjoiMjAyNC0wNC0yM1QyMDoyMjozOFoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJncm5oc2UtcHJvZC1qYmVuLXVzLXdlc3QtMiJ9LFsic3RhcnRzLXdpdGgiLCIkdXRmOCIsIiJdLFsic3RhcnRzLXdpdGgiLCIkYXV0aGVudGljaXR5X3Rva2VuIiwiIl0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJzdGFzaC9hcHBsaWNhdGlvbnMvcmVzdW1lcyJdLHsieC1hbXotc2VydmVyLXNpZGUtZW5jcnlwdGlvbiI6IkFFUzI1NiJ9LHsic3VjY2Vzc19hY3Rpb25fc3RhdHVzIjoiMjAxIn0sWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsMSwxMDQ4NTc2MDBdLFsic3RhcnRzLXdpdGgiLCIkQ29udGVudC1UeXBlIiwiIl0seyJ4LWFtei1jcmVkZW50aWFsIjoiQUtJQVZRR09MR1kzNU1MNDVFQzIvMjAyNDAzMjMvdXMtd2VzdC0yL3MzL2F3czRfcmVxdWVzdCJ9LHsieC1hbXotYWxnb3JpdGhtIjoiQVdTNC1ITUFDLVNIQTI1NiJ9LHsieC1hbXotZGF0ZSI6IjIwMjQwMzIzVDIwMjIzOFoifV19"><input type="hidden" name="x-amz-credential" value="AKIAVQGOLGY35ML45EC2/20240323/us-west-2/s3/aws4_request"><input type="hidden" name="x-amz-algorithm" value="AWS4-HMAC-SHA256"><input type="hidden" name="x-amz-date" value="20240323T202238Z"><input type="hidden" name="x-amz-signature" value="a3c868025089e0ad61e966136575ff97effda355c29130a3b681792ff6971ecf"><input type="file" name="file" tabindex="-1"><input type="hidden" name="key"></form>
+---
+John Doe. He provided his name (John Doe), email (johndoe@example.com), and phone number (123-456-7890), along with the content of his resume or a link to his resume file. In the education section, he mentioned that he attended a school where he studied Computer Science and earned a Bachelor's degree, with his study period from 2010 to 2014.
+
+Additionally, John provided a link to his LinkedIn profile and answered two questions: he confirmed that he is authorized to work in the United States and that he is currently located in the US.
+---
+{
+  "name": "John Doe",
+  "contact_information": {
+    "email": "johndoe@example.com",
+    "phone": "123-456-7890"
+  },
+  "resume": "Link or content of the resume",
+  "education": {
+    "school": "Name of the School",
+    "major": "Computer Science",
+    "degree": "Bachelor's Degree",
+    "start_year": "2010",
+    "end_year": "2014"
+  },
+  "linkedin_profile": "https://www.linkedin.com/in/johndoe",
+  "authorization_to_work_in_US": "Yes",
+  "located_in_US": "Yes"
+}
+|---
+<form action="/submit-purchase-order" method="post">
+        <!-- Company Information -->
+        <fieldset>
+            <legend>Company Information</legend>
+            <label for="company-name">Company Name:</label>
+            <input type="text" id="company-name" name="company_name"><br>
+            <label for="company-address">Address:</label>
+            <input type="text" id="company-address" name="company_address"><br>
+            <label for="company-phone">Phone:</label>
+            <input type="tel" id="company-phone" name="company_phone"><br>
+            <label for="company-email">Email:</label>
+            <input type="email" id="company-email" name="company_email"><br>
+        </fieldset>
+
+        <!-- Billing and Shipping Information -->
+        <fieldset>
+            <legend>Billing & Shipping Information</legend>
+            <label for="bill-to">Bill To:</label>
+            <input type="text" id="bill-to" name="bill_to"><br>
+            <label for="ship-to">Ship To:</label>
+            <input type="text" id="ship-to" name="ship_to"><br>
+        </fieldset>
+
+        <!-- Order Details -->
+        <fieldset>
+            <legend>Order Details</legend>
+            <label for="purchase-order-date">Date:</label>
+            <input type="date" id="purchase-order-date" name="purchase_order_date"><br>
+            <label for="purchase-order-number">Purchase Order No.:</label>
+            <input type="text" id="purchase-order-number" name="purchase_order_number"><br>
+        </fieldset>
+
+        <!-- Items Ordered -->
+        <fieldset>
+            <legend>Items Ordered</legend>
+            <div class="item">
+                <label for="item-number-1">Item No.:</label>
+                <input type="text" id="item-number-1" name="item_number_1"><br>
+                
+                <label for="description-1">Description:</label>
+                <input type="text" id="description-1" name="description_1"><br>
+                
+                <label for="quantity-1">Quantity:</label>
+                <input type="number" id="quantity-1" name="quantity_1"><br>
+                
+                <label for="unit-price-1">Unit Price:</label>
+                <input type="text" id="unit-price-1" name="unit_price_1"><br>
+                
+                <label for="dimensions-1">Dimensions (LxWxH):</label>
+                <input type="text" id="dimensions-1" name="dimensions_1" placeholder="LxWxH"><br>
+            </div>
+            <!-- Additional items would be added here -->
+        </fieldset>
+
+        <!-- Additional Information -->
+        <fieldset>
+            <legend>Additional Information</legend>
+            <label for="subtotal">Subtotal:</label>
+            <input type="text" id="subtotal" name="subtotal"><br>
+            
+            <label for="discount">Discount:</label>
+            <input type="text" id="discount" name="discount"><br>
+            
+            <label for="tax-rate">Tax Rate:</label>
+            <input type="text" id="tax-rate" name="tax_rate"><br>
+            
+            <label for="total-tax">Total Tax:</label>
+            <input type="text" id="total-tax" name="total_tax"><br>
+            
+            <label for="shipping-handling">Shipping/Handling:</label>
+            <input type="text" id="shipping-handling" name="shipping_handling"><br>
+            
+            <label for="total">Total:</label>
+            <input type="text" id="total" name="total"><br>
+        </fieldset>
+
+        <input type="submit" value="Submit Purchase Order">
+    </form>
+
+    ---
+    This order reflects the sales situation of Acme Corp. The order, number PO12345678 dated March 23, 2024, details a series of products sold. The sale includes 10 medium women's T-shirts, 5 medium men's T-shirts, 10 pairs of size 5 children's shoes, and 5 extra-large men's jackets. The dimensions of the children's shoes are listed as 10x5x3. The total amount of goods reached $300, and after considering the discount, the total amount was reduced by $20. The sales order also includes a 7.25% tax rate, with the total tax amounting to $18.04. Along with a shipping and handling fee of $10, the final total amount of the order is $388.04. Both the billing and shipping addresses are directed to B2B Solutions and its warehouse. This order demonstrates Acme Corp's capability to supply a diverse range of products to its B2B clients and exhibits the company's professionalism in maintaining an effective inventory management and order processing system.
+    ---
+    {
+  "company_info": {
+    "company_name": "Acme Corp",
+    "address": "123 Business Rd, City, State, 45678",
+    "phone": "123-456-7890",
+    "email": "contact@acmecorp.com"
+  },
+  "billing_info": {
+    "bill_to": "B2B Solutions",
+    "bill_address": "456 Invoice Ave, City, State, 78901"
+  },
+  "shipping_info": {
+    "ship_to": "B2B Solutions Warehouse",
+    "ship_address": "789 Shipping Ln, City, State, 78901"
+  },
+  "order_details": {
+    "date": "2024-03-23",
+    "purchase_order_number": "PO12345678"
+  },
+  "items_ordered": [
+    {
+      "item_number": "A111",
+      "description": "Women's T-shirt - M",
+      "quantity": 10,
+      "unit_price": "10.00",
+      "dimensions": "N/A"
+    },
+    {
+      "item_number": "B222",
+      "description": "Men's T-shirt - M",
+      "quantity": 5,
+      "unit_price": "20.00",
+      "dimensions": "N/A"
+    },
+    {
+      "item_number": "C333",
+      "description": "Children's shoes - 5",
+      "quantity": 10,
+      "unit_price": "5.00",
+      "dimensions": "10x5x3"
+    },
+    {
+      "item_number": "D444",
+      "description": "Men's Jacket - XL",
+      "quantity": 5,
+      "unit_price": "50.00",
+      "dimensions": "N/A"
+    }
+  ],
+  "additional_info": {
+    "subtotal": "300.00",
+    "discount": "20.00",
+    "tax_rate": "7.25",
+    "total_tax": "18.04",
+    "shipping_handling": "10.00",
+    "total": "388.04"
+  }
+}
+|---
+<div class="card__body modal__body" data-quid="modal-card-overlay-body" role="document">
+    <div class="single-page-pizza-builder__wrapper"><button class="btn btn--secondary btn--load-unsaved-pizza"
+            data-quid="load-previous-pizza">Load Previous Pizza</button>
+        <ol class="single-page-pizza-builder">
+            <li>
+                <section class="card card--pop card--pizza-sizes-and-crusts">
+                    <h2 class="card__title"><span aria-hidden="true" class="single-page-pizza-builder__section-number">
+                        </span><span id="size-crust-heading" class="pizza-builder-section-heading">size &amp;
+                            crust</span></h2>
+                    <div class="card__body">
+                        <div role="alert"></div>
+                        <div class="pizza-sizes-and-crusts">
+                            <fieldset class="fieldset--reset">
+                                <legend class="is-visually-hidden pizza-sizes__legend">Size</legend>
+                                <div class="pizza-sizes"><label class="pizza-size" data-quid="pizza-size-10">
+                                        <input data-quid="pizza-size-10-input" id="pizza_size|10" name="pizza_size"
+                                            type="radio" value="10"><span class="pizza-size__size pizza-size__size--10"
+                                            data-quid="pizza-size-10-size">10"</span><span class="pizza-size__name"
+                                            data-quid="pizza-size-10-name">Small</span></label>
+                                    <label class="pizza-size" data-quid="pizza-size-12"><input
+                                            data-quid="pizza-size-12-input" id="pizza_size|12" name="pizza_size"
+                                            type="radio" value="12"><span class="pizza-size__size pizza-size__size--12"
+                                            data-quid="pizza-size-12-size">12"</span><span class="pizza-size__name"
+                                            data-quid="pizza-size-12-name">Medium</span></label><label
+                                        class="pizza-size" data-quid="pizza-size-14"><input
+                                            data-quid="pizza-size-14-input" id="pizza_size|14" name="pizza_size"
+                                            type="radio" value="14"><span class="pizza-size__size pizza-size__size--14"
+                                            data-quid="pizza-size-14-size">14"</span><span class="pizza-size__name"
+                                            data-quid="pizza-size-14-name">Large</span></label>
+                                </div>
+                            </fieldset>
+                            <hr>
+                            <fieldset class="fieldset--reset">
+                                <legend class="is-visually-hidden">Crust</legend><label class="pizza-crust"><input
+                                        data-quid="crust-input-14SCEXTRAV" id="crust_type|14HANDTOSS"
+                                        name="S_ZZ|Variant" type="radio" value="14SCEXTRAV"><span
+                                        class="pizza-crust__name" data-quid="pizza-builder-crust-name-14HANDTOSS">Hand
+                                        Tossed</span><span class="pizza-crust__description"
+                                        data-quid="pizza-builder-crust-desc">Garlic-seasoned crust with a rich, buttery
+                                        taste.</span></label><label class="pizza-crust"><input
+                                        data-quid="crust-input-14TEXTRAV" id="crust_type|14THIN" name="S_ZZ|Variant"
+                                        type="radio" value="14TEXTRAV"><span class="pizza-crust__name"
+                                        data-quid="pizza-builder-crust-name-14THIN">Crunchy Thin Crust</span><span
+                                        class="pizza-crust__description" data-quid="pizza-builder-crust-desc">Thin
+                                        enough for the optimum crispy to crunchy ratio and square cut to be perfectly
+                                        sharable.</span></label><label class="pizza-crust"><input
+                                        data-quid="crust-input-PBKIREZZ" id="crust_type|14BK" name="S_ZZ|Variant"
+                                        type="radio" value="PBKIREZZ"><span class="pizza-crust__name"
+                                        data-quid="pizza-builder-crust-name-14BK">Brooklyn Style</span><span
+                                        class="pizza-crust__description" data-quid="pizza-builder-crust-desc">Hand
+                                        stretched to be big, thin and perfectly foldable.</span></label>
+                            </fieldset>
+                        </div>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section class="card card--pop">
+                    <h2 class="card__title"><span aria-hidden="true"
+                            class="single-page-pizza-builder__section-number"></span>
+                        <span class="pizza-builder-section-heading" id="cheese-heading">cheese</span>
+                    </h2>
+                    <div class="card__body">
+                        <div class="step-title-price"></div>
+                        <div role="alert"></div>
+                        <div class="toppings toppings--cheese">
+                            <div class="toppings__left">
+                                <div aria-label="Cheese"
+                                    class="accessible-topping accessible-topping--cheese pizza-topping" role="group">
+                                    <label data-quid="builder-topping-C-text"
+                                        class="pizza-topping__checkbox-label"><input data-quid="topping-C"
+                                            type="checkbox" value="C">
+                                        <span>Cheese</span></label><label
+                                        class="pizza-topping__part pizza-topping__part--left"
+                                        data-quid="topping-portion-C-1/2">
+                                        <input aria-label="Cheese on left side" data-dpz-track-evt-name="LEFT"
+                                            data-part="left" name="Part|C--1" type="radio" value="1/2"><svg
+                                            aria-hidden="true" fill="none" focusable="false" height="24"
+                                            viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                            <path
+                                                d="M11.4847 21.876L12.5861 21.9883V20.8811V3.11841V2.01126L11.4847 2.12357C9.03877 2.37296 6.77239 3.52107 5.12442 5.34558C3.47646 7.17009 2.56415 9.54119 2.56415 11.9998C2.56415 14.4583 3.47646 16.8294 5.12442 18.6539C6.77238 20.4785 9.03876 21.6266 11.4847 21.876Z">
+                                            </path>
+                                        </svg><span class="pizza-topping__label">Left</span></label><label
+                                        class="pizza-topping__part pizza-topping__part--selected pizza-topping__part--whole"
+                                        data-quid="topping-portion-C-1/1"><input aria-label="Cheese on whole pizza"
+                                            data-dpz-track-evt-name="WHOLE" data-part="whole" name="Part|C--1"
+                                            type="radio" value="1/1"><svg aria-hidden="true" fill="none"
+                                            focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                            class="pizza-topping__icon">
+                                            <path
+                                                d="M12.4996 22.3905C13.9031 22.3905 15.2637 22.116 16.5438 21.5745C17.7808 21.0513 18.8922 20.3018 19.8471 19.347C20.8019 18.3923 21.5513 17.2809 22.0746 16.0438C22.616 14.764 22.8904 13.4035 22.8904 12.0002C22.8904 10.5968 22.616 9.23613 22.0746 7.95616C21.5513 6.71903 20.8019 5.60762 19.8471 4.65284C18.8923 3.69806 17.7809 2.94865 16.5438 2.42538C15.2637 1.88401 13.9031 1.6095 12.4996 1.6095C11.0963 1.6095 9.73584 1.88401 8.45601 2.42538C7.21897 2.94863 6.10767 3.69806 5.1529 4.65284C4.19813 5.60762 3.44868 6.71903 2.9254 7.95616C2.384 9.23615 2.10958 10.5968 2.10958 12.0002C2.10958 13.4035 2.384 14.7639 2.9254 16.0438C3.44868 17.2809 4.19813 18.3923 5.1529 19.3471C6.10767 20.3019 7.21897 21.0513 8.45601 21.5746C9.73595 22.116 11.0963 22.3905 12.4996 22.3905ZM12.4996 24C5.87277 24 0.5 18.6269 0.5 12.0002C0.5 5.37262 5.87277 0 12.4996 0C19.1273 0 24.5 5.37262 24.5 12.0002C24.5 18.6269 19.1273 24 12.4996 24Z">
+                                            </path>
+                                            <path
+                                                d="M21.4187 12.0002C21.4186 13.7641 20.8955 15.4883 19.9154 16.9549C18.9354 18.4215 17.5425 19.5645 15.9129 20.2394C14.2832 20.9144 12.4901 21.091 10.7601 20.7468C9.03005 20.4027 7.44086 19.5533 6.1936 18.3061C4.94633 17.0589 4.09695 15.4698 3.75281 13.7398C3.40866 12.0098 3.58529 10.2166 4.26026 8.58703C4.93524 6.95741 6.07822 5.56455 7.54481 4.58454C9.01141 3.60453 10.7357 3.08139 12.4996 3.0813C14.8651 3.0813 17.1337 4.02098 18.8063 5.6936C20.479 7.36622 21.4187 9.63479 21.4187 12.0002Z">
+                                            </path>
+                                        </svg><span class="pizza-topping__label">Whole</span>
+                                    </label><label class="pizza-topping__part pizza-topping__part--right"
+                                        data-quid="topping-portion-C-2/2"><input aria-label="Cheese on right side"
+                                            data-dpz-track-evt-name="RIGHT" data-part="right" name="Part|C--1"
+                                            type="radio" value="2/2"><svg aria-hidden="true" fill="none"
+                                            focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                            class="pizza-topping__icon">
+                                            <path
+                                                d="M13.515 2.12357L12.4135 2.01126V3.11841V20.8811V21.9883L13.515 21.876C15.9609 21.6266 18.2273 20.4785 19.8753 18.6539C21.5232 16.8294 22.4354 14.4583 22.4354 11.9998C22.4354 9.54123 21.5232 7.17012 19.8753 5.34558C18.2273 3.52106 15.9609 2.37296 13.515 2.12357Z">
+                                            </path>
+                                        </svg><span class="pizza-topping__label">Right</span></label>
+                                    <div class="segmented-radio__component" role="group"><input aria-label="No Cheese"
+                                            type="radio" class="is-visually-hidden segmented-radio__input"
+                                            data-dpz-track-evt-name="Cheese Weight: None Selected" id="Cheese--1-0"
+                                            name="Cheese--1" value="0"><label class="segmented-radio__label"
+                                            for="Cheese--1-0">None</label><input aria-label="Light Cheese" type="radio"
+                                            class="is-visually-hidden segmented-radio__input"
+                                            data-dpz-track-evt-name="Cheese Weight: Light Selected" id="Cheese--1-0.5"
+                                            name="Cheese--1" value="0.5"><label class="segmented-radio__label"
+                                            for="Cheese--1-0.5">Light</label><input aria-label="Normal Cheese"
+                                            type="radio" class="is-visually-hidden segmented-radio__input"
+                                            data-dpz-track-evt-name="Cheese Weight: Normal Selected" id="Cheese--1-1"
+                                            name="Cheese--1" value="1"><label class="segmented-radio__label"
+                                            for="Cheese--1-1">Normal</label><input aria-label="Extra Cheese"
+                                            type="radio" class="is-visually-hidden segmented-radio__input"
+                                            data-dpz-track-evt-name="Cheese Weight: Extra Selected" id="Cheese--1-1.5"
+                                            name="Cheese--1" value="1.5"><label class="segmented-radio__label"
+                                            for="Cheese--1-1.5">Extra</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section class="card card--pop">
+                    <h2 class="card__title"><span aria-hidden="true"
+                            class="single-page-pizza-builder__section-number"></span><span
+                            class="pizza-builder-section-heading" id="sauce-heading">Sauce</span></h2>
+                    <div class="card__body card__body--no-handheld-padding">
+                        <div role="alert"></div>
+                        <div class="step-title-price"></div>
+                        <div aria-label="Robust Inspired Tomato Sauce"
+                            class="pizza-topping pizza-topping--group accessible-topping" role="group">
+                            <div class="pizza-topping__option pizza-topping__option--checked"><input
+                                    data-quid="topping-X" id="sauce-topping-X" name="sauce" type="radio"
+                                    value="X"><label data-quid="sauce-topping-X-text" for="sauce-topping-X">Robust
+                                    Inspired Tomato Sauce</label>
+                                <div class="segmented-radio__component" role="group"><input
+                                        aria-label="Light Robust Inspired Tomato Sauce" type="radio"
+                                        class="is-visually-hidden segmented-radio__input"
+                                        data-dpz-track-evt-name="Robust Inspired Tomato Sauce Weight: Light Selected"
+                                        id="Robust Inspired Tomato Sauce-0.5" name="Robust Inspired Tomato Sauce"
+                                        value="0.5"><label class="segmented-radio__label"
+                                        for="Robust Inspired Tomato Sauce-0.5">Light</label><input
+                                        aria-label="Normal Robust Inspired Tomato Sauce" type="radio"
+                                        class="is-visually-hidden segmented-radio__input"
+                                        data-dpz-track-evt-name="Robust Inspired Tomato Sauce Weight: Normal Selected"
+                                        id="Robust Inspired Tomato Sauce-1" name="Robust Inspired Tomato Sauce"
+                                        value="1"><label class="segmented-radio__label"
+                                        for="Robust Inspired Tomato Sauce-1">Normal</label><input
+                                        aria-label="Extra Robust Inspired Tomato Sauce" type="radio"
+                                        class="is-visually-hidden segmented-radio__input"
+                                        data-dpz-track-evt-name="Robust Inspired Tomato Sauce Weight: Extra Selected"
+                                        id="Robust Inspired Tomato Sauce-1.5" name="Robust Inspired Tomato Sauce"
+                                        value="1.5"><label class="segmented-radio__label"
+                                        for="Robust Inspired Tomato Sauce-1.5">Extra</label></div>
+                            </div>
+                            <div class="pizza-topping__option "><input data-quid="topping-Xm" id="sauce-topping-Xm"
+                                    name="sauce" type="radio" value="Xm"><label data-quid="sauce-topping-Xm-text"
+                                    for="sauce-topping-Xm">Hearty Marinara Sauce</label></div>
+                            <div class="pizza-topping__option "><input data-quid="topping-Bq" id="sauce-topping-Bq"
+                                    name="sauce" type="radio" value="Bq"><label data-quid="sauce-topping-Bq-text"
+                                    for="sauce-topping-Bq">Honey BBQ Sauce</label></div>
+                            <div class="pizza-topping__option "><input data-quid="topping-Xw" id="sauce-topping-Xw"
+                                    name="sauce" type="radio" value="Xw"><label data-quid="sauce-topping-Xw-text"
+                                    for="sauce-topping-Xw">Garlic Parmesan Sauce</label></div>
+                            <div class="pizza-topping__option "><input data-quid="topping-Xf" id="sauce-topping-Xf"
+                                    name="sauce" type="radio" value="Xf"><label data-quid="sauce-topping-Xf-text"
+                                    for="sauce-topping-Xf">Alfredo Sauce</label></div>
+                            <div class="pizza-topping__option "><input data-quid="topping-Rd" id="sauce-topping-Rd"
+                                    name="sauce" type="radio" value="Rd"><label data-quid="sauce-topping-Rd-text"
+                                    for="sauce-topping-Rd">Ranch</label></div>
+                            <div class="pizza-topping__option "><input data-quid="topping-0" id="sauce-topping-0"
+                                    name="sauce" type="radio" value="0"><label data-quid="sauce-topping-0-text"
+                                    for="sauce-topping-0">No Sauce</label></div>
+                        </div>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section class="card card--pop">
+                    <h2 class="card__title" data-quid="single-page-pizza-builder-toppings"><span aria-hidden="true"
+                            class="single-page-pizza-builder__section-number"></span><span id="topping-heading"
+                            class="pizza-builder-section-heading">Toppings</span></h2>
+                    <div class="card__body card__body--no-handheld-padding">
+                        <div class="step-title-price"></div>
+                        <div role="alert"></div>
+                        <div role="alert"></div>
+                        <div class="toppings__divider">
+                            <h3 id="meat-heading" class="toppings__heading"><span
+                                    class="pizza-builder-section-heading">Choose Meats</span></h3>
+                            <div role="alert"></div>
+                            <div class="toppings">
+                                <div class="toppings__left">
+                                    <div aria-label="Ham" class="accessible-topping pizza-topping" role="group"><label
+                                            data-quid="builder-topping-H-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-H"
+                                                type="checkbox" value="H"><span>Ham</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--left"
+                                            data-quid="topping-portion-H-1/2"><input aria-label="Ham on left side"
+                                                data-dpz-track-evt-name="LEFT" data-part="left" name="Part|H"
+                                                type="radio" value="1/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M11.4847 21.876L12.5861 21.9883V20.8811V3.11841V2.01126L11.4847 2.12357C9.03877 2.37296 6.77239 3.52107 5.12442 5.34558C3.47646 7.17009 2.56415 9.54119 2.56415 11.9998C2.56415 14.4583 3.47646 16.8294 5.12442 18.6539C6.77238 20.4785 9.03876 21.6266 11.4847 21.876Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Left</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--selected pizza-topping__part--whole"
+                                            data-quid="topping-portion-H-1/1"><input aria-label="Ham on whole pizza"
+                                                data-dpz-track-evt-name="WHOLE" data-part="whole" name="Part|H"
+                                                type="radio" value="1/1"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M12.4996 22.3905C13.9031 22.3905 15.2637 22.116 16.5438 21.5745C17.7808 21.0513 18.8922 20.3018 19.8471 19.347C20.8019 18.3923 21.5513 17.2809 22.0746 16.0438C22.616 14.764 22.8904 13.4035 22.8904 12.0002C22.8904 10.5968 22.616 9.23613 22.0746 7.95616C21.5513 6.71903 20.8019 5.60762 19.8471 4.65284C18.8923 3.69806 17.7809 2.94865 16.5438 2.42538C15.2637 1.88401 13.9031 1.6095 12.4996 1.6095C11.0963 1.6095 9.73584 1.88401 8.45601 2.42538C7.21897 2.94863 6.10767 3.69806 5.1529 4.65284C4.19813 5.60762 3.44868 6.71903 2.9254 7.95616C2.384 9.23615 2.10958 10.5968 2.10958 12.0002C2.10958 13.4035 2.384 14.7639 2.9254 16.0438C3.44868 17.2809 4.19813 18.3923 5.1529 19.3471C6.10767 20.3019 7.21897 21.0513 8.45601 21.5746C9.73595 22.116 11.0963 22.3905 12.4996 22.3905ZM12.4996 24C5.87277 24 0.5 18.6269 0.5 12.0002C0.5 5.37262 5.87277 0 12.4996 0C19.1273 0 24.5 5.37262 24.5 12.0002C24.5 18.6269 19.1273 24 12.4996 24Z">
+                                                </path>
+                                                <path
+                                                    d="M21.4187 12.0002C21.4186 13.7641 20.8955 15.4883 19.9154 16.9549C18.9354 18.4215 17.5425 19.5645 15.9129 20.2394C14.2832 20.9144 12.4901 21.091 10.7601 20.7468C9.03005 20.4027 7.44086 19.5533 6.1936 18.3061C4.94633 17.0589 4.09695 15.4698 3.75281 13.7398C3.40866 12.0098 3.58529 10.2166 4.26026 8.58703C4.93524 6.95741 6.07822 5.56455 7.54481 4.58454C9.01141 3.60453 10.7357 3.08139 12.4996 3.0813C14.8651 3.0813 17.1337 4.02098 18.8063 5.6936C20.479 7.36622 21.4187 9.63479 21.4187 12.0002Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Whole</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--right"
+                                            data-quid="topping-portion-H-2/2"><input aria-label="Ham on right side"
+                                                data-dpz-track-evt-name="RIGHT" data-part="right" name="Part|H"
+                                                type="radio" value="2/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M13.515 2.12357L12.4135 2.01126V3.11841V20.8811V21.9883L13.515 21.876C15.9609 21.6266 18.2273 20.4785 19.8753 18.6539C21.5232 16.8294 22.4354 14.4583 22.4354 11.9998C22.4354 9.54123 21.5232 7.17012 19.8753 5.34558C18.2273 3.52106 15.9609 2.37296 13.515 2.12357Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Right</span></label>
+                                        <div class="segmented-radio__component" role="group"><input aria-label="No Ham"
+                                                type="radio" class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Ham Weight: None Selected" id="Ham-0"
+                                                name="Ham" value="0"><label class="segmented-radio__label"
+                                                for="Ham-0">None</label><input aria-label="Light Ham" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Ham Weight: Light Selected" id="Ham-0.5"
+                                                name="Ham" value="0.5"><label class="segmented-radio__label"
+                                                for="Ham-0.5">Light</label><input aria-label="Normal Ham" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Ham Weight: Normal Selected" id="Ham-1"
+                                                name="Ham" value="1"><label class="segmented-radio__label"
+                                                for="Ham-1">Normal</label><input aria-label="Extra Ham" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Ham Weight: Extra Selected" id="Ham-1.5"
+                                                name="Ham" value="1.5"><label class="segmented-radio__label"
+                                                for="Ham-1.5">Extra</label></div>
+                                    </div>
+                                    <div aria-label="Beef" class="accessible-topping pizza-topping" role="group"><label
+                                            data-quid="builder-topping-B-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-B"
+                                                type="checkbox" value="B"><span>Beef</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--left"
+                                            data-quid="topping-portion-B-1/2"><input aria-label="Beef on left side"
+                                                data-dpz-track-evt-name="LEFT" data-part="left" name="Part|B"
+                                                type="radio" value="1/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M11.4847 21.876L12.5861 21.9883V20.8811V3.11841V2.01126L11.4847 2.12357C9.03877 2.37296 6.77239 3.52107 5.12442 5.34558C3.47646 7.17009 2.56415 9.54119 2.56415 11.9998C2.56415 14.4583 3.47646 16.8294 5.12442 18.6539C6.77238 20.4785 9.03876 21.6266 11.4847 21.876Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Left</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--selected pizza-topping__part--whole"
+                                            data-quid="topping-portion-B-1/1"><input aria-label="Beef on whole pizza"
+                                                data-dpz-track-evt-name="WHOLE" data-part="whole" name="Part|B"
+                                                type="radio" value="1/1"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M12.4996 22.3905C13.9031 22.3905 15.2637 22.116 16.5438 21.5745C17.7808 21.0513 18.8922 20.3018 19.8471 19.347C20.8019 18.3923 21.5513 17.2809 22.0746 16.0438C22.616 14.764 22.8904 13.4035 22.8904 12.0002C22.8904 10.5968 22.616 9.23613 22.0746 7.95616C21.5513 6.71903 20.8019 5.60762 19.8471 4.65284C18.8923 3.69806 17.7809 2.94865 16.5438 2.42538C15.2637 1.88401 13.9031 1.6095 12.4996 1.6095C11.0963 1.6095 9.73584 1.88401 8.45601 2.42538C7.21897 2.94863 6.10767 3.69806 5.1529 4.65284C4.19813 5.60762 3.44868 6.71903 2.9254 7.95616C2.384 9.23615 2.10958 10.5968 2.10958 12.0002C2.10958 13.4035 2.384 14.7639 2.9254 16.0438C3.44868 17.2809 4.19813 18.3923 5.1529 19.3471C6.10767 20.3019 7.21897 21.0513 8.45601 21.5746C9.73595 22.116 11.0963 22.3905 12.4996 22.3905ZM12.4996 24C5.87277 24 0.5 18.6269 0.5 12.0002C0.5 5.37262 5.87277 0 12.4996 0C19.1273 0 24.5 5.37262 24.5 12.0002C24.5 18.6269 19.1273 24 12.4996 24Z">
+                                                </path>
+                                                <path
+                                                    d="M21.4187 12.0002C21.4186 13.7641 20.8955 15.4883 19.9154 16.9549C18.9354 18.4215 17.5425 19.5645 15.9129 20.2394C14.2832 20.9144 12.4901 21.091 10.7601 20.7468C9.03005 20.4027 7.44086 19.5533 6.1936 18.3061C4.94633 17.0589 4.09695 15.4698 3.75281 13.7398C3.40866 12.0098 3.58529 10.2166 4.26026 8.58703C4.93524 6.95741 6.07822 5.56455 7.54481 4.58454C9.01141 3.60453 10.7357 3.08139 12.4996 3.0813C14.8651 3.0813 17.1337 4.02098 18.8063 5.6936C20.479 7.36622 21.4187 9.63479 21.4187 12.0002Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Whole</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--right"
+                                            data-quid="topping-portion-B-2/2"><input aria-label="Beef on right side"
+                                                data-dpz-track-evt-name="RIGHT" data-part="right" name="Part|B"
+                                                type="radio" value="2/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M13.515 2.12357L12.4135 2.01126V3.11841V20.8811V21.9883L13.515 21.876C15.9609 21.6266 18.2273 20.4785 19.8753 18.6539C21.5232 16.8294 22.4354 14.4583 22.4354 11.9998C22.4354 9.54123 21.5232 7.17012 19.8753 5.34558C18.2273 3.52106 15.9609 2.37296 13.515 2.12357Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Right</span></label>
+                                        <div class="segmented-radio__component" role="group"><input aria-label="No Beef"
+                                                type="radio" class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Beef Weight: None Selected" id="Beef-0"
+                                                name="Beef" value="0"><label class="segmented-radio__label"
+                                                for="Beef-0">None</label><input aria-label="Light Beef" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Beef Weight: Light Selected" id="Beef-0.5"
+                                                name="Beef" value="0.5"><label class="segmented-radio__label"
+                                                for="Beef-0.5">Light</label><input aria-label="Normal Beef" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Beef Weight: Normal Selected" id="Beef-1"
+                                                name="Beef" value="1"><label class="segmented-radio__label"
+                                                for="Beef-1">Normal</label><input aria-label="Extra Beef" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Beef Weight: Extra Selected" id="Beef-1.5"
+                                                name="Beef" value="1.5"><label class="segmented-radio__label"
+                                                for="Beef-1.5">Extra</label></div>
+                                    </div>
+                                    <div aria-label="Salami" class="accessible-topping pizza-topping" role="group">
+                                        <label data-quid="builder-topping-Sa-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-Sa"
+                                                type="checkbox" value="Sa"><span>Salami</span></label></div>
+                                    <div aria-label="Pepperoni" class="accessible-topping pizza-topping" role="group">
+                                        <label data-quid="builder-topping-P-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-P"
+                                                type="checkbox" value="P"><span>Pepperoni</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--left"
+                                            data-quid="topping-portion-P-1/2"><input aria-label="Pepperoni on left side"
+                                                data-dpz-track-evt-name="LEFT" data-part="left" name="Part|P"
+                                                type="radio" value="1/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M11.4847 21.876L12.5861 21.9883V20.8811V3.11841V2.01126L11.4847 2.12357C9.03877 2.37296 6.77239 3.52107 5.12442 5.34558C3.47646 7.17009 2.56415 9.54119 2.56415 11.9998C2.56415 14.4583 3.47646 16.8294 5.12442 18.6539C6.77238 20.4785 9.03876 21.6266 11.4847 21.876Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Left</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--selected pizza-topping__part--whole"
+                                            data-quid="topping-portion-P-1/1"><input
+                                                aria-label="Pepperoni on whole pizza" data-dpz-track-evt-name="WHOLE"
+                                                data-part="whole" name="Part|P" type="radio" value="1/1"><svg
+                                                aria-hidden="true" fill="none" focusable="false" height="24"
+                                                viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                                <path
+                                                    d="M12.4996 22.3905C13.9031 22.3905 15.2637 22.116 16.5438 21.5745C17.7808 21.0513 18.8922 20.3018 19.8471 19.347C20.8019 18.3923 21.5513 17.2809 22.0746 16.0438C22.616 14.764 22.8904 13.4035 22.8904 12.0002C22.8904 10.5968 22.616 9.23613 22.0746 7.95616C21.5513 6.71903 20.8019 5.60762 19.8471 4.65284C18.8923 3.69806 17.7809 2.94865 16.5438 2.42538C15.2637 1.88401 13.9031 1.6095 12.4996 1.6095C11.0963 1.6095 9.73584 1.88401 8.45601 2.42538C7.21897 2.94863 6.10767 3.69806 5.1529 4.65284C4.19813 5.60762 3.44868 6.71903 2.9254 7.95616C2.384 9.23615 2.10958 10.5968 2.10958 12.0002C2.10958 13.4035 2.384 14.7639 2.9254 16.0438C3.44868 17.2809 4.19813 18.3923 5.1529 19.3471C6.10767 20.3019 7.21897 21.0513 8.45601 21.5746C9.73595 22.116 11.0963 22.3905 12.4996 22.3905ZM12.4996 24C5.87277 24 0.5 18.6269 0.5 12.0002C0.5 5.37262 5.87277 0 12.4996 0C19.1273 0 24.5 5.37262 24.5 12.0002C24.5 18.6269 19.1273 24 12.4996 24Z">
+                                                </path>
+                                                <path
+                                                    d="M21.4187 12.0002C21.4186 13.7641 20.8955 15.4883 19.9154 16.9549C18.9354 18.4215 17.5425 19.5645 15.9129 20.2394C14.2832 20.9144 12.4901 21.091 10.7601 20.7468C9.03005 20.4027 7.44086 19.5533 6.1936 18.3061C4.94633 17.0589 4.09695 15.4698 3.75281 13.7398C3.40866 12.0098 3.58529 10.2166 4.26026 8.58703C4.93524 6.95741 6.07822 5.56455 7.54481 4.58454C9.01141 3.60453 10.7357 3.08139 12.4996 3.0813C14.8651 3.0813 17.1337 4.02098 18.8063 5.6936C20.479 7.36622 21.4187 9.63479 21.4187 12.0002Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Whole</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--right"
+                                            data-quid="topping-portion-P-2/2"><input
+                                                aria-label="Pepperoni on right side" data-dpz-track-evt-name="RIGHT"
+                                                data-part="right" name="Part|P" type="radio" value="2/2"><svg
+                                                aria-hidden="true" fill="none" focusable="false" height="24"
+                                                viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                                <path
+                                                    d="M13.515 2.12357L12.4135 2.01126V3.11841V20.8811V21.9883L13.515 21.876C15.9609 21.6266 18.2273 20.4785 19.8753 18.6539C21.5232 16.8294 22.4354 14.4583 22.4354 11.9998C22.4354 9.54123 21.5232 7.17012 19.8753 5.34558C18.2273 3.52106 15.9609 2.37296 13.515 2.12357Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Right</span></label>
+                                        <div class="segmented-radio__component" role="group"><input
+                                                aria-label="No Pepperoni" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Pepperoni Weight: None Selected"
+                                                id="Pepperoni-0" name="Pepperoni" value="0"><label
+                                                class="segmented-radio__label" for="Pepperoni-0">None</label><input
+                                                aria-label="Light Pepperoni" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Pepperoni Weight: Light Selected"
+                                                id="Pepperoni-0.5" name="Pepperoni" value="0.5"><label
+                                                class="segmented-radio__label" for="Pepperoni-0.5">Light</label><input
+                                                aria-label="Normal Pepperoni" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Pepperoni Weight: Normal Selected"
+                                                id="Pepperoni-1" name="Pepperoni" value="1"><label
+                                                class="segmented-radio__label" for="Pepperoni-1">Normal</label><input
+                                                aria-label="Extra Pepperoni" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Pepperoni Weight: Extra Selected"
+                                                id="Pepperoni-1.5" name="Pepperoni" value="1.5"><label
+                                                class="segmented-radio__label" for="Pepperoni-1.5">Extra</label></div>
+                                    </div>
+                                </div>
+                                <div class="toppings__right">
+                                    <div aria-label="Italian Sausage" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-S-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-S"
+                                                type="checkbox" value="S"><span>Italian Sausage</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--left"
+                                            data-quid="topping-portion-S-1/2"><input
+                                                aria-label="Italian Sausage on left side" data-dpz-track-evt-name="LEFT"
+                                                data-part="left" name="Part|S" type="radio" value="1/2"><svg
+                                                aria-hidden="true" fill="none" focusable="false" height="24"
+                                                viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                                <path
+                                                    d="M11.4847 21.876L12.5861 21.9883V20.8811V3.11841V2.01126L11.4847 2.12357C9.03877 2.37296 6.77239 3.52107 5.12442 5.34558C3.47646 7.17009 2.56415 9.54119 2.56415 11.9998C2.56415 14.4583 3.47646 16.8294 5.12442 18.6539C6.77238 20.4785 9.03876 21.6266 11.4847 21.876Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Left</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--selected pizza-topping__part--whole"
+                                            data-quid="topping-portion-S-1/1"><input
+                                                aria-label="Italian Sausage on whole pizza"
+                                                data-dpz-track-evt-name="WHOLE" data-part="whole" name="Part|S"
+                                                type="radio" value="1/1"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M12.4996 22.3905C13.9031 22.3905 15.2637 22.116 16.5438 21.5745C17.7808 21.0513 18.8922 20.3018 19.8471 19.347C20.8019 18.3923 21.5513 17.2809 22.0746 16.0438C22.616 14.764 22.8904 13.4035 22.8904 12.0002C22.8904 10.5968 22.616 9.23613 22.0746 7.95616C21.5513 6.71903 20.8019 5.60762 19.8471 4.65284C18.8923 3.69806 17.7809 2.94865 16.5438 2.42538C15.2637 1.88401 13.9031 1.6095 12.4996 1.6095C11.0963 1.6095 9.73584 1.88401 8.45601 2.42538C7.21897 2.94863 6.10767 3.69806 5.1529 4.65284C4.19813 5.60762 3.44868 6.71903 2.9254 7.95616C2.384 9.23615 2.10958 10.5968 2.10958 12.0002C2.10958 13.4035 2.384 14.7639 2.9254 16.0438C3.44868 17.2809 4.19813 18.3923 5.1529 19.3471C6.10767 20.3019 7.21897 21.0513 8.45601 21.5746C9.73595 22.116 11.0963 22.3905 12.4996 22.3905ZM12.4996 24C5.87277 24 0.5 18.6269 0.5 12.0002C0.5 5.37262 5.87277 0 12.4996 0C19.1273 0 24.5 5.37262 24.5 12.0002C24.5 18.6269 19.1273 24 12.4996 24Z">
+                                                </path>
+                                                <path
+                                                    d="M21.4187 12.0002C21.4186 13.7641 20.8955 15.4883 19.9154 16.9549C18.9354 18.4215 17.5425 19.5645 15.9129 20.2394C14.2832 20.9144 12.4901 21.091 10.7601 20.7468C9.03005 20.4027 7.44086 19.5533 6.1936 18.3061C4.94633 17.0589 4.09695 15.4698 3.75281 13.7398C3.40866 12.0098 3.58529 10.2166 4.26026 8.58703C4.93524 6.95741 6.07822 5.56455 7.54481 4.58454C9.01141 3.60453 10.7357 3.08139 12.4996 3.0813C14.8651 3.0813 17.1337 4.02098 18.8063 5.6936C20.479 7.36622 21.4187 9.63479 21.4187 12.0002Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Whole</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--right"
+                                            data-quid="topping-portion-S-2/2"><input
+                                                aria-label="Italian Sausage on right side"
+                                                data-dpz-track-evt-name="RIGHT" data-part="right" name="Part|S"
+                                                type="radio" value="2/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M13.515 2.12357L12.4135 2.01126V3.11841V20.8811V21.9883L13.515 21.876C15.9609 21.6266 18.2273 20.4785 19.8753 18.6539C21.5232 16.8294 22.4354 14.4583 22.4354 11.9998C22.4354 9.54123 21.5232 7.17012 19.8753 5.34558C18.2273 3.52106 15.9609 2.37296 13.515 2.12357Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Right</span></label>
+                                        <div class="segmented-radio__component" role="group"><input
+                                                aria-label="No Italian Sausage" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Italian Sausage Weight: None Selected"
+                                                id="Italian Sausage-0" name="Italian Sausage" value="0"><label
+                                                class="segmented-radio__label"
+                                                for="Italian Sausage-0">None</label><input
+                                                aria-label="Light Italian Sausage" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Italian Sausage Weight: Light Selected"
+                                                id="Italian Sausage-0.5" name="Italian Sausage" value="0.5"><label
+                                                class="segmented-radio__label"
+                                                for="Italian Sausage-0.5">Light</label><input
+                                                aria-label="Normal Italian Sausage" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Italian Sausage Weight: Normal Selected"
+                                                id="Italian Sausage-1" name="Italian Sausage" value="1"><label
+                                                class="segmented-radio__label"
+                                                for="Italian Sausage-1">Normal</label><input
+                                                aria-label="Extra Italian Sausage" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Italian Sausage Weight: Extra Selected"
+                                                id="Italian Sausage-1.5" name="Italian Sausage" value="1.5"><label
+                                                class="segmented-radio__label" for="Italian Sausage-1.5">Extra</label>
+                                        </div>
+                                    </div>
+                                    <div aria-label="Premium Chicken" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-Du-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-Du"
+                                                type="checkbox" value="Du"><span>Premium Chicken</span></label></div>
+                                    <div aria-label="Bacon" class="accessible-topping pizza-topping" role="group"><label
+                                            data-quid="builder-topping-K-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-K"
+                                                type="checkbox" value="K"><span>Bacon</span></label></div>
+                                    <div aria-label="Philly Steak" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-Pm-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-Pm"
+                                                type="checkbox" value="Pm"><span>Philly Steak</span></label></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toppings__divider">
+                            <h3 id="nonmeat-heading" class="toppings__heading"><span
+                                    class="pizza-builder-section-heading">Choose Non-meats</span></h3>
+                            <div role="alert"></div>
+                            <div class="toppings">
+                                <div class="toppings__left">
+                                    <div aria-label="Hot Buffalo Sauce" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-Ht-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-Ht"
+                                                type="checkbox" value="Ht"><span>Hot Buffalo Sauce</span></label></div>
+                                    <div aria-label="Jalapeno Peppers" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-J-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-J"
+                                                type="checkbox" value="J"><span>Jalapeno Peppers</span></label></div>
+                                    <div aria-label="Onions" class="accessible-topping pizza-topping" role="group">
+                                        <label data-quid="builder-topping-O-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-O"
+                                                type="checkbox" value="O"><span>Onions</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--left"
+                                            data-quid="topping-portion-O-1/2"><input aria-label="Onions on left side"
+                                                data-dpz-track-evt-name="LEFT" data-part="left" name="Part|O"
+                                                type="radio" value="1/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M11.4847 21.876L12.5861 21.9883V20.8811V3.11841V2.01126L11.4847 2.12357C9.03877 2.37296 6.77239 3.52107 5.12442 5.34558C3.47646 7.17009 2.56415 9.54119 2.56415 11.9998C2.56415 14.4583 3.47646 16.8294 5.12442 18.6539C6.77238 20.4785 9.03876 21.6266 11.4847 21.876Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Left</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--selected pizza-topping__part--whole"
+                                            data-quid="topping-portion-O-1/1"><input aria-label="Onions on whole pizza"
+                                                data-dpz-track-evt-name="WHOLE" data-part="whole" name="Part|O"
+                                                type="radio" value="1/1"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M12.4996 22.3905C13.9031 22.3905 15.2637 22.116 16.5438 21.5745C17.7808 21.0513 18.8922 20.3018 19.8471 19.347C20.8019 18.3923 21.5513 17.2809 22.0746 16.0438C22.616 14.764 22.8904 13.4035 22.8904 12.0002C22.8904 10.5968 22.616 9.23613 22.0746 7.95616C21.5513 6.71903 20.8019 5.60762 19.8471 4.65284C18.8923 3.69806 17.7809 2.94865 16.5438 2.42538C15.2637 1.88401 13.9031 1.6095 12.4996 1.6095C11.0963 1.6095 9.73584 1.88401 8.45601 2.42538C7.21897 2.94863 6.10767 3.69806 5.1529 4.65284C4.19813 5.60762 3.44868 6.71903 2.9254 7.95616C2.384 9.23615 2.10958 10.5968 2.10958 12.0002C2.10958 13.4035 2.384 14.7639 2.9254 16.0438C3.44868 17.2809 4.19813 18.3923 5.1529 19.3471C6.10767 20.3019 7.21897 21.0513 8.45601 21.5746C9.73595 22.116 11.0963 22.3905 12.4996 22.3905ZM12.4996 24C5.87277 24 0.5 18.6269 0.5 12.0002C0.5 5.37262 5.87277 0 12.4996 0C19.1273 0 24.5 5.37262 24.5 12.0002C24.5 18.6269 19.1273 24 12.4996 24Z">
+                                                </path>
+                                                <path
+                                                    d="M21.4187 12.0002C21.4186 13.7641 20.8955 15.4883 19.9154 16.9549C18.9354 18.4215 17.5425 19.5645 15.9129 20.2394C14.2832 20.9144 12.4901 21.091 10.7601 20.7468C9.03005 20.4027 7.44086 19.5533 6.1936 18.3061C4.94633 17.0589 4.09695 15.4698 3.75281 13.7398C3.40866 12.0098 3.58529 10.2166 4.26026 8.58703C4.93524 6.95741 6.07822 5.56455 7.54481 4.58454C9.01141 3.60453 10.7357 3.08139 12.4996 3.0813C14.8651 3.0813 17.1337 4.02098 18.8063 5.6936C20.479 7.36622 21.4187 9.63479 21.4187 12.0002Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Whole</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--right"
+                                            data-quid="topping-portion-O-2/2"><input aria-label="Onions on right side"
+                                                data-dpz-track-evt-name="RIGHT" data-part="right" name="Part|O"
+                                                type="radio" value="2/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M13.515 2.12357L12.4135 2.01126V3.11841V20.8811V21.9883L13.515 21.876C15.9609 21.6266 18.2273 20.4785 19.8753 18.6539C21.5232 16.8294 22.4354 14.4583 22.4354 11.9998C22.4354 9.54123 21.5232 7.17012 19.8753 5.34558C18.2273 3.52106 15.9609 2.37296 13.515 2.12357Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Right</span></label>
+                                        <div class="segmented-radio__component" role="group"><input
+                                                aria-label="No Onions" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Onions Weight: None Selected" id="Onions-0"
+                                                name="Onions" value="0"><label class="segmented-radio__label"
+                                                for="Onions-0">None</label><input aria-label="Light Onions" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Onions Weight: Light Selected" id="Onions-0.5"
+                                                name="Onions" value="0.5"><label class="segmented-radio__label"
+                                                for="Onions-0.5">Light</label><input aria-label="Normal Onions"
+                                                type="radio" class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Onions Weight: Normal Selected" id="Onions-1"
+                                                name="Onions" value="1"><label class="segmented-radio__label"
+                                                for="Onions-1">Normal</label><input aria-label="Extra Onions"
+                                                type="radio" class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Onions Weight: Extra Selected" id="Onions-1.5"
+                                                name="Onions" value="1.5"><label class="segmented-radio__label"
+                                                for="Onions-1.5">Extra</label></div>
+                                    </div>
+                                    <div aria-label="Banana Peppers" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-Z-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-Z"
+                                                type="checkbox" value="Z"><span>Banana Peppers</span></label></div>
+                                    <div aria-label="Diced Tomatoes" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-Td-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-Td"
+                                                type="checkbox" value="Td"><span>Diced Tomatoes</span></label></div>
+                                    <div aria-label="Black Olives" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-R-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-R"
+                                                type="checkbox" value="R"><span>Black Olives</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--left"
+                                            data-quid="topping-portion-R-1/2"><input
+                                                aria-label="Black Olives on left side" data-dpz-track-evt-name="LEFT"
+                                                data-part="left" name="Part|R" type="radio" value="1/2"><svg
+                                                aria-hidden="true" fill="none" focusable="false" height="24"
+                                                viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                                <path
+                                                    d="M11.4847 21.876L12.5861 21.9883V20.8811V3.11841V2.01126L11.4847 2.12357C9.03877 2.37296 6.77239 3.52107 5.12442 5.34558C3.47646 7.17009 2.56415 9.54119 2.56415 11.9998C2.56415 14.4583 3.47646 16.8294 5.12442 18.6539C6.77238 20.4785 9.03876 21.6266 11.4847 21.876Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Left</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--selected pizza-topping__part--whole"
+                                            data-quid="topping-portion-R-1/1"><input
+                                                aria-label="Black Olives on whole pizza" data-dpz-track-evt-name="WHOLE"
+                                                data-part="whole" name="Part|R" type="radio" value="1/1"><svg
+                                                aria-hidden="true" fill="none" focusable="false" height="24"
+                                                viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                                <path
+                                                    d="M12.4996 22.3905C13.9031 22.3905 15.2637 22.116 16.5438 21.5745C17.7808 21.0513 18.8922 20.3018 19.8471 19.347C20.8019 18.3923 21.5513 17.2809 22.0746 16.0438C22.616 14.764 22.8904 13.4035 22.8904 12.0002C22.8904 10.5968 22.616 9.23613 22.0746 7.95616C21.5513 6.71903 20.8019 5.60762 19.8471 4.65284C18.8923 3.69806 17.7809 2.94865 16.5438 2.42538C15.2637 1.88401 13.9031 1.6095 12.4996 1.6095C11.0963 1.6095 9.73584 1.88401 8.45601 2.42538C7.21897 2.94863 6.10767 3.69806 5.1529 4.65284C4.19813 5.60762 3.44868 6.71903 2.9254 7.95616C2.384 9.23615 2.10958 10.5968 2.10958 12.0002C2.10958 13.4035 2.384 14.7639 2.9254 16.0438C3.44868 17.2809 4.19813 18.3923 5.1529 19.3471C6.10767 20.3019 7.21897 21.0513 8.45601 21.5746C9.73595 22.116 11.0963 22.3905 12.4996 22.3905ZM12.4996 24C5.87277 24 0.5 18.6269 0.5 12.0002C0.5 5.37262 5.87277 0 12.4996 0C19.1273 0 24.5 5.37262 24.5 12.0002C24.5 18.6269 19.1273 24 12.4996 24Z">
+                                                </path>
+                                                <path
+                                                    d="M21.4187 12.0002C21.4186 13.7641 20.8955 15.4883 19.9154 16.9549C18.9354 18.4215 17.5425 19.5645 15.9129 20.2394C14.2832 20.9144 12.4901 21.091 10.7601 20.7468C9.03005 20.4027 7.44086 19.5533 6.1936 18.3061C4.94633 17.0589 4.09695 15.4698 3.75281 13.7398C3.40866 12.0098 3.58529 10.2166 4.26026 8.58703C4.93524 6.95741 6.07822 5.56455 7.54481 4.58454C9.01141 3.60453 10.7357 3.08139 12.4996 3.0813C14.8651 3.0813 17.1337 4.02098 18.8063 5.6936C20.479 7.36622 21.4187 9.63479 21.4187 12.0002Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Whole</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--right"
+                                            data-quid="topping-portion-R-2/2"><input
+                                                aria-label="Black Olives on right side" data-dpz-track-evt-name="RIGHT"
+                                                data-part="right" name="Part|R" type="radio" value="2/2"><svg
+                                                aria-hidden="true" fill="none" focusable="false" height="24"
+                                                viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                                <path
+                                                    d="M13.515 2.12357L12.4135 2.01126V3.11841V20.8811V21.9883L13.515 21.876C15.9609 21.6266 18.2273 20.4785 19.8753 18.6539C21.5232 16.8294 22.4354 14.4583 22.4354 11.9998C22.4354 9.54123 21.5232 7.17012 19.8753 5.34558C18.2273 3.52106 15.9609 2.37296 13.515 2.12357Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Right</span></label>
+                                        <div class="segmented-radio__component" role="group"><input
+                                                aria-label="No Black Olives" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Black Olives Weight: None Selected"
+                                                id="Black Olives-0" name="Black Olives" value="0"><label
+                                                class="segmented-radio__label" for="Black Olives-0">None</label><input
+                                                aria-label="Light Black Olives" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Black Olives Weight: Light Selected"
+                                                id="Black Olives-0.5" name="Black Olives" value="0.5"><label
+                                                class="segmented-radio__label"
+                                                for="Black Olives-0.5">Light</label><input
+                                                aria-label="Normal Black Olives" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Black Olives Weight: Normal Selected"
+                                                id="Black Olives-1" name="Black Olives" value="1"><label
+                                                class="segmented-radio__label" for="Black Olives-1">Normal</label><input
+                                                aria-label="Extra Black Olives" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Black Olives Weight: Extra Selected"
+                                                id="Black Olives-1.5" name="Black Olives" value="1.5"><label
+                                                class="segmented-radio__label" for="Black Olives-1.5">Extra</label>
+                                        </div>
+                                    </div>
+                                    <div aria-label="Mushrooms" class="accessible-topping pizza-topping" role="group">
+                                        <label data-quid="builder-topping-M-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-M"
+                                                type="checkbox" value="M"><span>Mushrooms</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--left"
+                                            data-quid="topping-portion-M-1/2"><input aria-label="Mushrooms on left side"
+                                                data-dpz-track-evt-name="LEFT" data-part="left" name="Part|M"
+                                                type="radio" value="1/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M11.4847 21.876L12.5861 21.9883V20.8811V3.11841V2.01126L11.4847 2.12357C9.03877 2.37296 6.77239 3.52107 5.12442 5.34558C3.47646 7.17009 2.56415 9.54119 2.56415 11.9998C2.56415 14.4583 3.47646 16.8294 5.12442 18.6539C6.77238 20.4785 9.03876 21.6266 11.4847 21.876Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Left</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--selected pizza-topping__part--whole"
+                                            data-quid="topping-portion-M-1/1"><input
+                                                aria-label="Mushrooms on whole pizza" data-dpz-track-evt-name="WHOLE"
+                                                data-part="whole" name="Part|M" type="radio" value="1/1"><svg
+                                                aria-hidden="true" fill="none" focusable="false" height="24"
+                                                viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                                <path
+                                                    d="M12.4996 22.3905C13.9031 22.3905 15.2637 22.116 16.5438 21.5745C17.7808 21.0513 18.8922 20.3018 19.8471 19.347C20.8019 18.3923 21.5513 17.2809 22.0746 16.0438C22.616 14.764 22.8904 13.4035 22.8904 12.0002C22.8904 10.5968 22.616 9.23613 22.0746 7.95616C21.5513 6.71903 20.8019 5.60762 19.8471 4.65284C18.8923 3.69806 17.7809 2.94865 16.5438 2.42538C15.2637 1.88401 13.9031 1.6095 12.4996 1.6095C11.0963 1.6095 9.73584 1.88401 8.45601 2.42538C7.21897 2.94863 6.10767 3.69806 5.1529 4.65284C4.19813 5.60762 3.44868 6.71903 2.9254 7.95616C2.384 9.23615 2.10958 10.5968 2.10958 12.0002C2.10958 13.4035 2.384 14.7639 2.9254 16.0438C3.44868 17.2809 4.19813 18.3923 5.1529 19.3471C6.10767 20.3019 7.21897 21.0513 8.45601 21.5746C9.73595 22.116 11.0963 22.3905 12.4996 22.3905ZM12.4996 24C5.87277 24 0.5 18.6269 0.5 12.0002C0.5 5.37262 5.87277 0 12.4996 0C19.1273 0 24.5 5.37262 24.5 12.0002C24.5 18.6269 19.1273 24 12.4996 24Z">
+                                                </path>
+                                                <path
+                                                    d="M21.4187 12.0002C21.4186 13.7641 20.8955 15.4883 19.9154 16.9549C18.9354 18.4215 17.5425 19.5645 15.9129 20.2394C14.2832 20.9144 12.4901 21.091 10.7601 20.7468C9.03005 20.4027 7.44086 19.5533 6.1936 18.3061C4.94633 17.0589 4.09695 15.4698 3.75281 13.7398C3.40866 12.0098 3.58529 10.2166 4.26026 8.58703C4.93524 6.95741 6.07822 5.56455 7.54481 4.58454C9.01141 3.60453 10.7357 3.08139 12.4996 3.0813C14.8651 3.0813 17.1337 4.02098 18.8063 5.6936C20.479 7.36622 21.4187 9.63479 21.4187 12.0002Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Whole</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--right"
+                                            data-quid="topping-portion-M-2/2"><input
+                                                aria-label="Mushrooms on right side" data-dpz-track-evt-name="RIGHT"
+                                                data-part="right" name="Part|M" type="radio" value="2/2"><svg
+                                                aria-hidden="true" fill="none" focusable="false" height="24"
+                                                viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                                <path
+                                                    d="M13.515 2.12357L12.4135 2.01126V3.11841V20.8811V21.9883L13.515 21.876C15.9609 21.6266 18.2273 20.4785 19.8753 18.6539C21.5232 16.8294 22.4354 14.4583 22.4354 11.9998C22.4354 9.54123 21.5232 7.17012 19.8753 5.34558C18.2273 3.52106 15.9609 2.37296 13.515 2.12357Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Right</span></label>
+                                        <div class="segmented-radio__component" role="group"><input
+                                                aria-label="No Mushrooms" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Mushrooms Weight: None Selected"
+                                                id="Mushrooms-0" name="Mushrooms" value="0"><label
+                                                class="segmented-radio__label" for="Mushrooms-0">None</label><input
+                                                aria-label="Light Mushrooms" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Mushrooms Weight: Light Selected"
+                                                id="Mushrooms-0.5" name="Mushrooms" value="0.5"><label
+                                                class="segmented-radio__label" for="Mushrooms-0.5">Light</label><input
+                                                aria-label="Normal Mushrooms" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Mushrooms Weight: Normal Selected"
+                                                id="Mushrooms-1" name="Mushrooms" value="1"><label
+                                                class="segmented-radio__label" for="Mushrooms-1">Normal</label><input
+                                                aria-label="Extra Mushrooms" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Mushrooms Weight: Extra Selected"
+                                                id="Mushrooms-1.5" name="Mushrooms" value="1.5"><label
+                                                class="segmented-radio__label" for="Mushrooms-1.5">Extra</label></div>
+                                    </div>
+                                </div>
+                                <div class="toppings__right">
+                                    <div aria-label="Pineapple" class="accessible-topping pizza-topping" role="group">
+                                        <label data-quid="builder-topping-N-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-N"
+                                                type="checkbox" value="N"><span>Pineapple</span></label></div>
+                                    <div aria-label="Shredded Provolone Cheese" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-Cp-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-Cp"
+                                                type="checkbox" value="Cp"><span>Shredded Provolone
+                                                Cheese</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--left"
+                                            data-quid="topping-portion-Cp-1/2"><input
+                                                aria-label="Shredded Provolone Cheese on left side"
+                                                data-dpz-track-evt-name="LEFT" data-part="left" name="Part|Cp"
+                                                type="radio" value="1/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M11.4847 21.876L12.5861 21.9883V20.8811V3.11841V2.01126L11.4847 2.12357C9.03877 2.37296 6.77239 3.52107 5.12442 5.34558C3.47646 7.17009 2.56415 9.54119 2.56415 11.9998C2.56415 14.4583 3.47646 16.8294 5.12442 18.6539C6.77238 20.4785 9.03876 21.6266 11.4847 21.876Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Left</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--selected pizza-topping__part--whole"
+                                            data-quid="topping-portion-Cp-1/1"><input
+                                                aria-label="Shredded Provolone Cheese on whole pizza"
+                                                data-dpz-track-evt-name="WHOLE" data-part="whole" name="Part|Cp"
+                                                type="radio" value="1/1"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M12.4996 22.3905C13.9031 22.3905 15.2637 22.116 16.5438 21.5745C17.7808 21.0513 18.8922 20.3018 19.8471 19.347C20.8019 18.3923 21.5513 17.2809 22.0746 16.0438C22.616 14.764 22.8904 13.4035 22.8904 12.0002C22.8904 10.5968 22.616 9.23613 22.0746 7.95616C21.5513 6.71903 20.8019 5.60762 19.8471 4.65284C18.8923 3.69806 17.7809 2.94865 16.5438 2.42538C15.2637 1.88401 13.9031 1.6095 12.4996 1.6095C11.0963 1.6095 9.73584 1.88401 8.45601 2.42538C7.21897 2.94863 6.10767 3.69806 5.1529 4.65284C4.19813 5.60762 3.44868 6.71903 2.9254 7.95616C2.384 9.23615 2.10958 10.5968 2.10958 12.0002C2.10958 13.4035 2.384 14.7639 2.9254 16.0438C3.44868 17.2809 4.19813 18.3923 5.1529 19.3471C6.10767 20.3019 7.21897 21.0513 8.45601 21.5746C9.73595 22.116 11.0963 22.3905 12.4996 22.3905ZM12.4996 24C5.87277 24 0.5 18.6269 0.5 12.0002C0.5 5.37262 5.87277 0 12.4996 0C19.1273 0 24.5 5.37262 24.5 12.0002C24.5 18.6269 19.1273 24 12.4996 24Z">
+                                                </path>
+                                                <path
+                                                    d="M21.4187 12.0002C21.4186 13.7641 20.8955 15.4883 19.9154 16.9549C18.9354 18.4215 17.5425 19.5645 15.9129 20.2394C14.2832 20.9144 12.4901 21.091 10.7601 20.7468C9.03005 20.4027 7.44086 19.5533 6.1936 18.3061C4.94633 17.0589 4.09695 15.4698 3.75281 13.7398C3.40866 12.0098 3.58529 10.2166 4.26026 8.58703C4.93524 6.95741 6.07822 5.56455 7.54481 4.58454C9.01141 3.60453 10.7357 3.08139 12.4996 3.0813C14.8651 3.0813 17.1337 4.02098 18.8063 5.6936C20.479 7.36622 21.4187 9.63479 21.4187 12.0002Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Whole</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--right"
+                                            data-quid="topping-portion-Cp-2/2"><input
+                                                aria-label="Shredded Provolone Cheese on right side"
+                                                data-dpz-track-evt-name="RIGHT" data-part="right" name="Part|Cp"
+                                                type="radio" value="2/2"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M13.515 2.12357L12.4135 2.01126V3.11841V20.8811V21.9883L13.515 21.876C15.9609 21.6266 18.2273 20.4785 19.8753 18.6539C21.5232 16.8294 22.4354 14.4583 22.4354 11.9998C22.4354 9.54123 21.5232 7.17012 19.8753 5.34558C18.2273 3.52106 15.9609 2.37296 13.515 2.12357Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Right</span></label>
+                                        <div class="segmented-radio__component" role="group"><input
+                                                aria-label="No Shredded Provolone Cheese" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Shredded Provolone Cheese Weight: None Selected"
+                                                id="Shredded Provolone Cheese-0" name="Shredded Provolone Cheese"
+                                                value="0"><label class="segmented-radio__label"
+                                                for="Shredded Provolone Cheese-0">None</label><input
+                                                aria-label="Light Shredded Provolone Cheese" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Shredded Provolone Cheese Weight: Light Selected"
+                                                id="Shredded Provolone Cheese-0.5" name="Shredded Provolone Cheese"
+                                                value="0.5"><label class="segmented-radio__label"
+                                                for="Shredded Provolone Cheese-0.5">Light</label><input
+                                                aria-label="Normal Shredded Provolone Cheese" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Shredded Provolone Cheese Weight: Normal Selected"
+                                                id="Shredded Provolone Cheese-1" name="Shredded Provolone Cheese"
+                                                value="1"><label class="segmented-radio__label"
+                                                for="Shredded Provolone Cheese-1">Normal</label><input
+                                                aria-label="Extra Shredded Provolone Cheese" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Shredded Provolone Cheese Weight: Extra Selected"
+                                                id="Shredded Provolone Cheese-1.5" name="Shredded Provolone Cheese"
+                                                value="1.5"><label class="segmented-radio__label"
+                                                for="Shredded Provolone Cheese-1.5">Extra</label></div>
+                                    </div>
+                                    <div aria-label="Cheddar Cheese Blend" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-E-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-E"
+                                                type="checkbox" value="E"><span>Cheddar Cheese Blend</span></label>
+                                    </div>
+                                    <div aria-label="Green Peppers" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-G-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-G"
+                                                type="checkbox" value="G"><span>Green Peppers</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--left"
+                                            data-quid="topping-portion-G-1/2"><input
+                                                aria-label="Green Peppers on left side" data-dpz-track-evt-name="LEFT"
+                                                data-part="left" name="Part|G" type="radio" value="1/2"><svg
+                                                aria-hidden="true" fill="none" focusable="false" height="24"
+                                                viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                                <path
+                                                    d="M11.4847 21.876L12.5861 21.9883V20.8811V3.11841V2.01126L11.4847 2.12357C9.03877 2.37296 6.77239 3.52107 5.12442 5.34558C3.47646 7.17009 2.56415 9.54119 2.56415 11.9998C2.56415 14.4583 3.47646 16.8294 5.12442 18.6539C6.77238 20.4785 9.03876 21.6266 11.4847 21.876Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Left</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--selected pizza-topping__part--whole"
+                                            data-quid="topping-portion-G-1/1"><input
+                                                aria-label="Green Peppers on whole pizza"
+                                                data-dpz-track-evt-name="WHOLE" data-part="whole" name="Part|G"
+                                                type="radio" value="1/1"><svg aria-hidden="true" fill="none"
+                                                focusable="false" height="24" viewBox="0 0 25 24" width="25"
+                                                class="pizza-topping__icon">
+                                                <path
+                                                    d="M12.4996 22.3905C13.9031 22.3905 15.2637 22.116 16.5438 21.5745C17.7808 21.0513 18.8922 20.3018 19.8471 19.347C20.8019 18.3923 21.5513 17.2809 22.0746 16.0438C22.616 14.764 22.8904 13.4035 22.8904 12.0002C22.8904 10.5968 22.616 9.23613 22.0746 7.95616C21.5513 6.71903 20.8019 5.60762 19.8471 4.65284C18.8923 3.69806 17.7809 2.94865 16.5438 2.42538C15.2637 1.88401 13.9031 1.6095 12.4996 1.6095C11.0963 1.6095 9.73584 1.88401 8.45601 2.42538C7.21897 2.94863 6.10767 3.69806 5.1529 4.65284C4.19813 5.60762 3.44868 6.71903 2.9254 7.95616C2.384 9.23615 2.10958 10.5968 2.10958 12.0002C2.10958 13.4035 2.384 14.7639 2.9254 16.0438C3.44868 17.2809 4.19813 18.3923 5.1529 19.3471C6.10767 20.3019 7.21897 21.0513 8.45601 21.5746C9.73595 22.116 11.0963 22.3905 12.4996 22.3905ZM12.4996 24C5.87277 24 0.5 18.6269 0.5 12.0002C0.5 5.37262 5.87277 0 12.4996 0C19.1273 0 24.5 5.37262 24.5 12.0002C24.5 18.6269 19.1273 24 12.4996 24Z">
+                                                </path>
+                                                <path
+                                                    d="M21.4187 12.0002C21.4186 13.7641 20.8955 15.4883 19.9154 16.9549C18.9354 18.4215 17.5425 19.5645 15.9129 20.2394C14.2832 20.9144 12.4901 21.091 10.7601 20.7468C9.03005 20.4027 7.44086 19.5533 6.1936 18.3061C4.94633 17.0589 4.09695 15.4698 3.75281 13.7398C3.40866 12.0098 3.58529 10.2166 4.26026 8.58703C4.93524 6.95741 6.07822 5.56455 7.54481 4.58454C9.01141 3.60453 10.7357 3.08139 12.4996 3.0813C14.8651 3.0813 17.1337 4.02098 18.8063 5.6936C20.479 7.36622 21.4187 9.63479 21.4187 12.0002Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Whole</span></label><label
+                                            class="pizza-topping__part pizza-topping__part--right"
+                                            data-quid="topping-portion-G-2/2"><input
+                                                aria-label="Green Peppers on right side" data-dpz-track-evt-name="RIGHT"
+                                                data-part="right" name="Part|G" type="radio" value="2/2"><svg
+                                                aria-hidden="true" fill="none" focusable="false" height="24"
+                                                viewBox="0 0 25 24" width="25" class="pizza-topping__icon">
+                                                <path
+                                                    d="M13.515 2.12357L12.4135 2.01126V3.11841V20.8811V21.9883L13.515 21.876C15.9609 21.6266 18.2273 20.4785 19.8753 18.6539C21.5232 16.8294 22.4354 14.4583 22.4354 11.9998C22.4354 9.54123 21.5232 7.17012 19.8753 5.34558C18.2273 3.52106 15.9609 2.37296 13.515 2.12357Z">
+                                                </path>
+                                            </svg><span class="pizza-topping__label">Right</span></label>
+                                        <div class="segmented-radio__component" role="group"><input
+                                                aria-label="No Green Peppers" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Green Peppers Weight: None Selected"
+                                                id="Green Peppers-0" name="Green Peppers" value="0"><label
+                                                class="segmented-radio__label" for="Green Peppers-0">None</label><input
+                                                aria-label="Light Green Peppers" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Green Peppers Weight: Light Selected"
+                                                id="Green Peppers-0.5" name="Green Peppers" value="0.5"><label
+                                                class="segmented-radio__label"
+                                                for="Green Peppers-0.5">Light</label><input
+                                                aria-label="Normal Green Peppers" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Green Peppers Weight: Normal Selected"
+                                                id="Green Peppers-1" name="Green Peppers" value="1"><label
+                                                class="segmented-radio__label"
+                                                for="Green Peppers-1">Normal</label><input
+                                                aria-label="Extra Green Peppers" type="radio"
+                                                class="is-visually-hidden segmented-radio__input"
+                                                data-dpz-track-evt-name="Green Peppers Weight: Extra Selected"
+                                                id="Green Peppers-1.5" name="Green Peppers" value="1.5"><label
+                                                class="segmented-radio__label" for="Green Peppers-1.5">Extra</label>
+                                        </div>
+                                    </div>
+                                    <div aria-label="Spinach" class="accessible-topping pizza-topping" role="group">
+                                        <label data-quid="builder-topping-Si-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-Si"
+                                                type="checkbox" value="Si"><span>Spinach</span></label></div>
+                                    <div aria-label="Feta Cheese" class="accessible-topping pizza-topping" role="group">
+                                        <label data-quid="builder-topping-Fe-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-Fe"
+                                                type="checkbox" value="Fe"><span>Feta Cheese</span></label></div>
+                                    <div aria-label="Shredded Parmesan Asiago" class="accessible-topping pizza-topping"
+                                        role="group"><label data-quid="builder-topping-Cs-text"
+                                            class="pizza-topping__checkbox-label"><input data-quid="topping-Cs"
+                                                type="checkbox" value="Cs"><span>Shredded Parmesan Asiago</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section class="card card--pop">
+                    <h2 class="card__title"><span aria-hidden="true"
+                            class="single-page-pizza-builder__section-number"></span><span id="dipping-cups-heading"
+                            class="pizza-builder-section-heading">Add sauces for dipping?</span></h2>
+                    <div class="card__body dipping-cups">
+                        <p class="">Additional charges may apply</p>
+                        <fieldset class="hidden-fieldset__component">
+                            <legend class="hidden-fieldset__legend is-visually-hidden">Dipping cups</legend>
+                            <ul class="dipping-cups__list">
+                                <li data-quid="dipping-cup-F_SIDGAR">
+                                    <div class="side__component"><img alt="" class=""
+                                            src="https://cache.dominos.com/olo/6_128_2/assets/build/market/US/_en/images/img/products/minis/F_SIDGAR.jpg">
+                                        <div class="side__description"><strong aria-hidden="true"
+                                                data-quid="dipping-cup-F_SIDGAR-text">Garlic Dipping Sauce</strong>
+                                        </div>
+                                        <div class="quantity__component"><button
+                                                class="btn btn--secondary quantity__button" type="button"
+                                                data-dpz-no-track="true"
+                                                data-dpz-track-evt-name="Garlic Dipping Sauce Quantity Decremented"
+                                                disabled="" aria-label="decrease Garlic Dipping Sauce quantity"
+                                                data-quid="dipping-cup-F_SIDGAR-decrement">−</button>
+                                            <div aria-busy="true" class="quantity__label"
+                                                data-quid="dipping-cup-F_SIDGAR-value" role="status">
+                                                <p class="is-visually-hidden">Quantity:</p>0
+                                            </div><button class="btn btn--secondary quantity__button" type="button"
+                                                data-dpz-no-track="true"
+                                                data-dpz-track-evt-name="Garlic Dipping Sauce Quantity Incremented"
+                                                aria-label="increase Garlic Dipping Sauce quantity"
+                                                data-quid="dipping-cup-F_SIDGAR-increment">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-quid="dipping-cup-F_SIDRAN">
+                                    <div class="side__component"><img alt="" class=""
+                                            src="https://cache.dominos.com/olo/6_128_2/assets/build/market/US/_en/images/img/products/minis/F_SIDRAN.jpg">
+                                        <div class="side__description"><strong aria-hidden="true"
+                                                data-quid="dipping-cup-F_SIDRAN-text">Ranch</strong></div>
+                                        <div class="quantity__component"><button
+                                                class="btn btn--secondary quantity__button" type="button"
+                                                data-dpz-no-track="true"
+                                                data-dpz-track-evt-name="Ranch Quantity Decremented" disabled=""
+                                                aria-label="decrease Ranch quantity"
+                                                data-quid="dipping-cup-F_SIDRAN-decrement">−</button>
+                                            <div aria-busy="true" class="quantity__label"
+                                                data-quid="dipping-cup-F_SIDRAN-value" role="status">
+                                                <p class="is-visually-hidden">Quantity:</p>0
+                                            </div><button class="btn btn--secondary quantity__button" type="button"
+                                                data-dpz-no-track="true"
+                                                data-dpz-track-evt-name="Ranch Quantity Incremented"
+                                                aria-label="increase Ranch quantity"
+                                                data-quid="dipping-cup-F_SIDRAN-increment">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li data-quid="dipping-cup-F_SIDMAR">
+                                    <div class="side__component"><img alt="" class=""
+                                            src="https://cache.dominos.com/olo/6_128_2/assets/build/market/US/_en/images/img/products/minis/F_SIDMAR.jpg">
+                                        <div class="side__description"><strong aria-hidden="true"
+                                                data-quid="dipping-cup-F_SIDMAR-text">Marinara Dipping Cup</strong>
+                                        </div>
+                                        <div class="quantity__component"><button
+                                                class="btn btn--secondary quantity__button" type="button"
+                                                data-dpz-no-track="true"
+                                                data-dpz-track-evt-name="Marinara Dipping Cup Quantity Decremented"
+                                                disabled="" aria-label="decrease Marinara Dipping Cup quantity"
+                                                data-quid="dipping-cup-F_SIDMAR-decrement">−</button>
+                                            <div aria-busy="true" class="quantity__label"
+                                                data-quid="dipping-cup-F_SIDMAR-value" role="status">
+                                                <p class="is-visually-hidden">Quantity:</p>0
+                                            </div><button class="btn btn--secondary quantity__button" type="button"
+                                                data-dpz-no-track="true"
+                                                data-dpz-track-evt-name="Marinara Dipping Cup Quantity Incremented"
+                                                aria-label="increase Marinara Dipping Cup quantity"
+                                                data-quid="dipping-cup-F_SIDMAR-increment">+</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section class="card card--pop special-instructions special-instructions--checked-bolder"
+                    data-quid="special-instructions"><button aria-expanded="false" class="btn card__title" type="button"
+                        data-quid="special-instructions-title"><span><span aria-hidden="true"
+                                class="single-page-pizza-builder__section-number"></span>Special
+                            Instructions</span><span class="short"><svg aria-hidden="true"
+                                class="caret collapsible-icon" focusable="false" viewBox="0 0 50 25">
+                                <path
+                                    d="m24 37.46a3.94 3.94 0 0 1 -3-1.2l-19.47-18.54a4.4 4.4 0 0 1 -.47-6.2 1.29 1.29 0 0 1 .16-.17 4.4 4.4 0 0 1 6.2-.5l.19.18 16.39 15.5 16.4-15.53a4.39 4.39 0 0 1 6.22.14 1.29 1.29 0 0 1 .16.17 4.38 4.38 0 0 1 -.14 6.21 1.29 1.29 0 0 1 -.17.16l-19.47 18.54a5.34 5.34 0 0 1 -3 1.24z"
+                                    transform="translate(0 -9.8)" xmlns="http://www.w3.org/2000/svg"></path>
+                            </svg></span></button>
+                    <div class="card__body special-instructions__body card__body--no-handheld-padding is-hidden">
+                        <fieldset class="hidden-fieldset__component special-instructions__fieldset"
+                            data-quid="special-instructions-BAKE">
+                            <legend class="special-instructions__heading" data-quid="special-instructions-BAKE-label">
+                                Bake</legend><label class="special-instructions__label"
+                                data-quid="special-instructions-BAKE-WD-label"><input
+                                    data-quid="special-instructions-BAKE-WD" name="BAKE" type="radio" value="WD">Well
+                                Done</label><label class="special-instructions__label"
+                                data-quid="special-instructions-BAKE-NB-label"><input
+                                    data-quid="special-instructions-BAKE-NB" name="BAKE" type="radio" value="NB">Normal
+                                Bake</label>
+                        </fieldset>
+                        <hr>
+                        <fieldset class="hidden-fieldset__component special-instructions__fieldset"
+                            data-quid="special-instructions-SEASONING">
+                            <legend class="special-instructions__heading"
+                                data-quid="special-instructions-SEASONING-label">Seasoning</legend><label
+                                class="special-instructions__label"
+                                data-quid="special-instructions-SEASONING-GO-label"><input
+                                    data-quid="special-instructions-SEASONING-GO" name="SEASONING" type="radio"
+                                    value="GO">Garlic-Seasoned Crust</label><label class="special-instructions__label"
+                                data-quid="special-instructions-SEASONING-NGO-label"><input
+                                    data-quid="special-instructions-SEASONING-NGO" name="SEASONING" type="radio"
+                                    value="NGO">No Garlic-Seasoned Crust</label>
+                        </fieldset>
+                        <hr>
+                        <fieldset class="hidden-fieldset__component special-instructions__fieldset"
+                            data-quid="special-instructions-CUT">
+                            <legend class="special-instructions__heading" data-quid="special-instructions-CUT-label">Cut
+                            </legend><label class="special-instructions__label"
+                                data-quid="special-instructions-CUT-PIECT-label"><input
+                                    data-quid="special-instructions-CUT-PIECT" name="CUT" type="radio" value="PIECT">Pie
+                                Cut</label><label class="special-instructions__label"
+                                data-quid="special-instructions-CUT-SQCT-label"><input
+                                    data-quid="special-instructions-CUT-SQCT" name="CUT" type="radio"
+                                    value="SQCT">Square Cut</label><label class="special-instructions__label"
+                                data-quid="special-instructions-CUT-UNCT-label"><input
+                                    data-quid="special-instructions-CUT-UNCT" name="CUT" type="radio"
+                                    value="UNCT">Uncut</label>
+                        </fieldset>
+                    </div>
+                </section>
+            </li>
+            <li class="single-page-pizza-builder__summary">
+                <div role="alert"></div>
+                <aside>
+                    <section class="card card--pop">
+                        <h2 class="card__title">My Pizza</h2>
+                        <div class="card__body">
+                            <div class="variant-details">
+                                <h3 class="variant-details__name" data-quid="item-title">Large (14") Hand Tossed
+                                    ExtravaganZZa </h3>
+                                <ul></ul>
+                            </div>
+                            <hr class="">
+                            <div class="grid">
+                                <div class="grid__cell--1 single-page-pizza-builder__quantity"><label
+                                        class="single-page-pizza-builder__quantity-label">Quantity:<div
+                                            class="quantity__component"><button
+                                                class="btn btn--secondary quantity__button" type="button"
+                                                data-dpz-no-track="true"
+                                                data-dpz-track-evt-name="Large (14&quot;) Hand Tossed ExtravaganZZa  Quantity Decremented"
+                                                disabled=""
+                                                aria-label="decrease Large (14&quot;) Hand Tossed ExtravaganZZa  quantity"
+                                                data-quid="generic-quantity-decrement">−</button>
+                                            <div aria-busy="true" class="quantity__label quantity__label--inlined"
+                                                data-quid="generic-quantity-value" role="status">
+                                                <p class="is-visually-hidden">Quantity:</p>1
+                                            </div><button class="btn btn--secondary quantity__button" type="button"
+                                                data-dpz-no-track="true"
+                                                data-dpz-track-evt-name="Large (14&quot;) Hand Tossed ExtravaganZZa  Quantity Incremented"
+                                                aria-label="increase Large (14&quot;) Hand Tossed ExtravaganZZa  quantity"
+                                                data-quid="generic-quantity-increment">+</button>
+                                        </div></label></div>
+                            </div>
+                            <div class="single-page-pizza-builder__add-to-order-container"><button
+                                    class="single-page-pizza-builder__add-to-order btn" type="button">Add to
+                                    Order</button></div>
+                        </div>
+                    </section>
+                    <div class="visualWrapper single-page-pizza-builder__visual is-hidden@handheld">
+                        <div class="js-visualPizzaBubbleOverlay visualPizzaBubbleOverlay"></div>
+                        <div class="builder__canvas-wrapper" id="pizzaCanvas"><canvas width="300" height="315"
+                                id="crust_canvas"
+                                style="display: block; position: absolute; z-index: 0;"></canvas><canvas width="300"
+                                height="315" id="mask_canvas"
+                                style="display: block; position: absolute; z-index: 15;"></canvas><canvas width="300"
+                                height="315" id="P_canvas"
+                                style="display: block; position: absolute; z-index: 1;"></canvas><canvas width="300"
+                                height="315" id="H_canvas"
+                                style="display: block; position: absolute; z-index: 2;"></canvas><canvas width="300"
+                                height="315" id="M_canvas"
+                                style="display: block; position: absolute; z-index: 3;"></canvas><canvas width="300"
+                                height="315" id="O_canvas"
+                                style="display: block; position: absolute; z-index: 3;"></canvas><canvas width="300"
+                                height="315" id="G_canvas"
+                                style="display: block; position: absolute; z-index: 3;"></canvas><canvas width="300"
+                                height="315" id="S_canvas"
+                                style="display: block; position: absolute; z-index: 2;"></canvas><canvas width="300"
+                                height="315" id="B_canvas"
+                                style="display: block; position: absolute; z-index: 2;"></canvas><canvas width="300"
+                                height="315" id="R_canvas"
+                                style="display: block; position: absolute; z-index: 3;"></canvas></div>
+                    </div>
+                </aside>
+            </li>
+            <li class="single-page-pizza-builder__bottom-copy-item">
+                <p class="single-page-pizza-builder__bottom-copy">The Pizza Builder will always show a large pizza. If
+                    you choose a different size, the topping amounts will vary. The deliciousness, however, will not.
+                </p>
+            </li>
+        </ol>
+    </div>
+</div>
+---
+The customer ordered a large 14-inch pizza with a hand-tossed, garlic-seasoned crust. They chose a normal amount of cheese and a tomato sauce base. For toppings, they added ham, pepperoni, mushrooms, onions, and green peppers over the entire pizza. The pizza is requested to be well done and cut into pie slices. Additionally, the order includes two garlic sauces and one ranch sauce for dipping. Only one pizza has been ordered.
+---
+{
+  "order": {
+    "pizza_size": "14",
+    "crust": "Hand Tossed",
+    "cheese": "Normal",
+    "sauce": "Robust Inspired Tomato Sauce",
+    "toppings": {
+      "meats": [
+        {
+          "name": "Ham",
+          "portion": "Whole"
+        },
+        {
+          "name": "Pepperoni",
+          "portion": "Whole"
+        }
+      ],
+      "non-meats": [
+        {
+          "name": "Mushrooms",
+          "portion": "Whole"
+        },
+        {
+          "name": "Onions",
+          "portion": "Whole"
+        },
+        {
+          "name": "Green Peppers",
+          "portion": "Whole"
+        }
+      ]
+    },
+    "special_instructions": {
+      "bake": "Well Done",
+      "seasoning": "Garlic-Seasoned Crust",
+      "cut": "Pie Cut"
+    },
+    "dipping_cups": [
+      {
+        "name": "Garlic Dipping Sauce",
+        "quantity": 2
+      },
+      {
+        "name": "Ranch",
+        "quantity": 1
+      }
+    ],
+    "quantity": 1
+  }
+}
+---
+

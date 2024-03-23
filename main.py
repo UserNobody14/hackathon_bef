@@ -50,19 +50,23 @@ class FormList(BaseModel):
 
 
 # Routes
+def cut_string(s, max_length):
+    return s[-max_length:]
 
 
 @app.post("/forms")
 async def fillout_forms(form_list: FormList):
+    print("FORM LIST: ", len(form_list.forms[0]))
+
     return JSONResponse(
         status_code=200,
         content=json.dumps(
             [
                 chain.invoke(f"""
 {form}
---- What the user wants ---
+--- Json of what the user wants to do/put in the form ---
 {form_list.prompt}
----
+--------------------------------
 """)
                 for form in form_list.forms
             ]
